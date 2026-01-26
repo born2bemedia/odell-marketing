@@ -1,0 +1,57 @@
+@use '@/shared/lib/styles/mixin.scss' as *;
+
+.home_second {
+  padding: 80px 0;
+  background-image: url(/images/home/second_back.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  background-color: var(--color-red-6, #100d0d);
+  @include tablet {
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    h2 {
+      color: var(--White, var(--color-white-solid, #fff));
+      text-align: center;
+      font-family: var(--font-family-Font-1, Switzer);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 140%; /* 22.4px */
+    }
+    .description_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      width: 100%;
+      p {
+        color: var(--White, var(--color-white-solid, #fff));
+        font-family: Switzer;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 110%; /* 66px */
+        letter-spacing: var(--letter-spacing--3_2, -3.2px);
+        @include tablet {
+          font-size: 40px;
+          letter-spacing: -2px;
+        }
+        @include mobile {
+          font-size: 24px;
+          letter-spacing: -1.44px;
+        }
+      }
+      .separator {
+        width: 100%;
+        height: 1px;
+        background: var(--color-grey-53, #878787);
+      }
+    }
+  }
+}

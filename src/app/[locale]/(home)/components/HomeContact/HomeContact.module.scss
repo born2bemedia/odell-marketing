@@ -1,0 +1,58 @@
+@use '@/shared/lib/styles/mixin.scss' as *;
+
+.home_contact {
+  padding: 80px 0;
+  background-image: url(/images/home/contact_back.svg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 24px;
+  background-color: var(--color-red-6, #100d0d);
+  @include tablet {
+    padding: 80px 0 260px 0;
+    background-image: url(/images/home/contact_back_mob.svg);
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    h2 {
+      color: var(--White, var(--color-white-solid, #fff));
+      font-family: var(--font-family-Font-1, Switzer);
+      font-size: 80px;
+      font-style: normal;
+      font-weight: var(--font-weight-200, 200);
+      line-height: 120%; /* 96px */
+      letter-spacing: var(--letter-spacing--3_75, -3.75px);
+      @include tablet {
+        font-size: 40px;
+      }
+      span {
+        color: var(--Candlelight, var(--color-yellow-58, #ffe028));
+        font-style: italic;
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+    p {
+      color: var(--color-white-solid, #fff);
+      font-family: var(--font-family-Font-1, Switzer);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 22.4px */
+      @include tablet {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  &__content {
+    margin-top: 40px;
+    max-width: 500px;
+  }
+}

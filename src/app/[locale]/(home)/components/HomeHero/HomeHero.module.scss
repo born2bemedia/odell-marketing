@@ -1,0 +1,156 @@
+@use '@/shared/lib/styles/mixin.scss' as *;
+
+.home_hero {
+  padding: 56px 0 0 0;
+  @include tablet{
+    padding-top: 16px;
+  }
+  video {
+    width: 1032px;
+    height: 687px;
+    border-radius: 40px 40px 0 0;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    @include largeDesktop {
+      width: 1240px;
+    }
+    @include tablet{
+      width: 100%;
+      height: 725px;
+    }
+  }
+  > div {
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    @include tablet{
+      top:60px;
+      padding: 0 30px;
+    }
+
+    .title_wrapper {
+      position: relative;
+      margin-bottom: 70px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      @include tablet{
+        margin-bottom: 30px;
+      }
+      @include mobile {
+        margin-bottom: 12px;
+      }
+      .title_black,
+      .title_white {
+        font-family: var(--font-family-Font-1, Switzer);
+        font-size: 120px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 1; /* 106.25% */
+        letter-spacing: var(--letter-spacing--3_75, -3.75px);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        @include desktop {
+          font-size: 100px;
+        }
+        @include tablet {
+          font-size: 80px;
+          letter-spacing: -1.28px;
+        }
+        @include mobile {
+          font-size: 40px;
+        }
+      }
+
+      .title_black {
+        position: relative;
+        color: var(--color-black-solid, #000);
+        z-index: 1;
+      }
+
+      .title_white {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        z-index: 2;
+        width: 100%;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          transparent calc(50% - 516px),
+          white calc(50% - 516px),
+          white calc(50% + 516px),
+          transparent calc(50% + 516px),
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          transparent calc(50% - 516px),
+          white calc(50% - 516px),
+          white calc(50% + 516px),
+          transparent calc(50% + 516px),
+          transparent 100%
+        );
+        @include largeDesktop {
+          mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(50% - 620px),
+            white calc(50% - 620px),
+            white calc(50% + 620px),
+            transparent calc(50% + 620px),
+            transparent 100%
+          );
+          -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(50% - 620px),
+            white calc(50% - 620px),
+            white calc(50% + 620px),
+            transparent calc(50% + 620px),
+            transparent 100%
+          );
+        }
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+    .description_wrapper {
+      width: 1032px;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 auto;
+      @include largeDesktop {
+        width: 1240px;
+      }
+      @include tablet{
+        width: 100%;
+      }
+      p {
+        color: var(--color-white-solid, #fff);
+        font-family: var(--font-family-Font-1, Switzer);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 22.4px */
+        width: 400px;
+        @include tablet{
+          width: 100%;
+          color: #000;
+        }
+      }
+    }
+  }
+}
