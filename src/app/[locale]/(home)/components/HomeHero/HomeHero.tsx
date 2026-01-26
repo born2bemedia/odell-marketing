@@ -10,7 +10,15 @@ export const HomeHero = () => {
   return (
     <section className={styles.home_hero}>
       <div className={"container"}>
-        <video src="/videos/hero.mp4" autoPlay muted loop playsInline />
+        <video
+          src="/videos/hero.mp4"
+          preload="auto"
+          poster="/images/home/video.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className={styles.home_hero__content}>
           <motion.div
             initial="hidden"
