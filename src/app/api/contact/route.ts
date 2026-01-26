@@ -2,30 +2,6 @@ import { NextResponse } from 'next/server';
 
 import sgMail from '@sendgrid/mail';
 
-async function verifyRecaptcha(token: string): Promise<boolean> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-
-  if (!secretKey) {
-    console.error('RECAPTCHA_SECRET_KEY is not set');
-    return false;
-  }
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${secretKey}&response=${token}`,
-    });
-
-    const data = await response.json();
-    return data.success === true;
-  } catch (error) {
-    console.error('Error verifying reCAPTCHA:', error);
-    return false;
-  }
-}
 
 export async function POST(request: Request): Promise<NextResponse> {
   try {
@@ -35,26 +11,6 @@ export async function POST(request: Request): Promise<NextResponse> {
     const companyProject = formData.get('companyProject') as string;
     const topicOfInquiry = formData.get('topicOfInquiry') as string;
     const description = formData.get('description') as string;
-    const recaptcha = formData.get('recaptcha') as string;
-
-    // Set to false to disable reCAPTCHA verification (useful for development/testing)
-    const ENABLE_RECAPTCHA = false;
-
-    // Verify reCAPTCHA token (only if enabled)
-    if (ENABLE_RECAPTCHA) {
-      if (!recaptcha || recaptcha === 'disabled') {
-        return NextResponse.json({ message: 'reCAPTCHA verification is required.' }, { status: 400 });
-      }
-
-      const isRecaptchaValid = await verifyRecaptcha(recaptcha);
-      if (!isRecaptchaValid) {
-        return NextResponse.json(
-          { message: 'reCAPTCHA verification failed. Please try again.' },
-          { status: 400 }
-        );
-      }
-    }
-
     // Initialize SendGrid with API key
     sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 

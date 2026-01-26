@@ -120,7 +120,7 @@ export const ContactForm = () => {
                   options={TOPIC_OPTIONS}
                   placeholder="Choose your topic of inquiry"
                   isSearchable={false}
-                  className={styles.select}
+                  className={`${styles.select} ${errors.topicOfInquiry ? styles.errorSelect : ''}`}
                   classNamePrefix="select"
                   styles={{
                     control: (base, state) => ({

@@ -1,25 +1,21 @@
-import Image from 'next/image';
-
-import { useTranslations } from 'next-intl';
 
 import styles from './ContactForm.module.scss';
 
 export const ContactFormSuccess = ({ onClose }: { onClose: () => void }) => {
-  const t = useTranslations('contactForm');
   return (
     <div className={styles.contactFormSuccess}>
       <div className={styles.contactFormSuccess__content}>
         
         <h2>
-          {t('success', { fallback: 'Your request has been ' })}
-          <span>{t('submitted', { fallback: 'submitted successfully' })}</span>
+        Your request has been
+          <span>submitted successfully</span>
         </h2>
         <p>
-          {t('thankYou', { fallback: 'Our team will reach out within the next business day.' })}
+        Our team will reach out within the next business day.
         </p>
         <span onClick={onClose}>
           <button type="button" className={styles.button}>
-            {t('close', { fallback: 'Continue' })}
+            Continue
           </button>
         </span>
       </div>
