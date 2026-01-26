@@ -9,7 +9,6 @@ import Select from 'react-select';
 import { submitContactForm } from '../api/submitContactForm';
 import { type ContactFormSchema, createContactFormSchema } from '../model/ContactForm.schema';
 import styles from './ContactForm.module.scss';
-import { ContactFormSuccess } from './ContactFormSuccess';
 
 const TOPIC_OPTIONS = [
   { value: "marketing-consulting", label: "Marketing consulting" },
@@ -218,10 +217,19 @@ export const ContactForm = () => {
               ? 'Loading...'
               : 'Send Inquiry'}
           </button>
-
+          {isSuccess && 
+          <div className={styles.successMessage}>
+            <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M4.16656 6.32079L7.99656 2.49121L8.58573 3.08038L4.16656 7.49954L1.51489 4.84788L2.10406 4.25871L4.16656 6.32079Z" fill="#ffe400"/>
+          </svg>
+            </span>
+          <p>Message received</p>
+          </div>
+          }
         </form>
       </div>
-      {isSuccess && <ContactFormSuccess onClose={() => setIsSuccess(false)} />}
+      {/**isSuccess && <ContactFormSuccess onClose={() => setIsSuccess(false)} /> */}
     </>
   );
 };

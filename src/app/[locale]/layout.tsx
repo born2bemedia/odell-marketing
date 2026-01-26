@@ -114,11 +114,11 @@ const switzer = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Blefariconsult',
-  description: 'Blefariconsult',
+  title: 'Marketing Consulting & Campaign Planning | Antonio Blefari',
+  description: 'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
   openGraph: {
-    title: 'Blefariconsult',
-    description: 'Blefariconsult',
+    title: 'Marketing Consulting & Campaign Planning | Antonio Blefari',
+    description: 'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
     //images: 'https://blefariconsult.com/images/meta.png',
   },
 };
