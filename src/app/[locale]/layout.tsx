@@ -119,7 +119,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Marketing Consulting & Campaign Planning | Antonio Blefari',
     description: 'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
-    //images: 'https://blefariconsult.com/images/meta.png',
+    images: 'https://blefariconsult.com/meta.png',
   },
 };
 
