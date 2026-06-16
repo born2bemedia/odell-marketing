@@ -114,12 +114,14 @@ const switzer = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Marketing Consulting & Campaign Planning | Antonio Blefari',
-  description: 'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
+  title: 'Marketing Consulting & Campaign Planning | Richard David Odell',
+  description:
+    'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
   openGraph: {
-    title: 'Marketing Consulting & Campaign Planning | Antonio Blefari',
-    description: 'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
-    images: 'https://blefariconsult.com/meta.png',
+    title: 'Marketing Consulting & Campaign Planning | Richard David Odell',
+    description:
+      'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
+    //images: 'https://odell-marketing.com/meta.png',
   },
 };
 
@@ -136,9 +138,7 @@ export default async function RootLayout({
     <html lang={locale}>
       {/* <GoogleAnalytics gaId="G-7YSW5B6JKV" /> */}
       <body className={cn(onest.variable, switzer.variable)}>
-        <NextIntlClientProvider>
-          {children}
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

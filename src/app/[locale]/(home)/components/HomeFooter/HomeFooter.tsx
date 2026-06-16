@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { fadeInUp } from "@/shared/lib/helpers/animations";
+import { fadeInUp } from '@/shared/lib/helpers/animations';
 
-import styles from "./HomeFooter.module.scss";
+import styles from './HomeFooter.module.scss';
 
 export const HomeFooter = () => {
   return (
     <section className={styles.home_footer}>
-      <div className={"container"}>
+      <div className={'container'}>
         <div className={styles.home_footer__row}>
           <motion.h2
             initial="hidden"
@@ -28,11 +28,11 @@ export const HomeFooter = () => {
             variants={fadeInUp}
           >
             <span>Address:</span>
-            <p>6 Lookout Ave Blaxland NSW 2774 Australia</p>
+            <p>93 Endeavour St, Red Hill ACT 2603, Australia</p>
           </motion.div>
         </div>
         <div className={styles.home_footer__copy}>
-          © {new Date().getFullYear()} Operated by Antonio Blefari
+          © {new Date().getFullYear()} Operated by Richard David Odell
         </div>
       </div>
     </section>
