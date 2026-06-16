@@ -121,7 +121,7 @@ export const metadata: Metadata = {
     title: 'Marketing Consulting & Campaign Planning | Richard David Odell',
     description:
       'Independent marketing consulting, campaign planning, and marketing planning services. Structured decision-making, clear priorities, and documented strategies. Based in Australia.',
-    //images: 'https://odell-marketing.com/meta.png',
+    images: 'https://odell-marketing.com/meta.png',
   },
 };
 
